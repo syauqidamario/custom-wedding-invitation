@@ -1,0 +1,78 @@
+:root{
+      --pink:#f91bdf;
+      --bg: #25bed6;
+      --shadow: 0 4px 4px rgba(107 89 89 / 0.5);
+}
+
+body{
+      font-size: 1.2rem;
+      font-family:'Lato', sans-serif;
+      min-height: 2000px;
+}
+
+.hero{
+      min-height:100vh;
+      background-color:var(--bg);
+}
+
+.hero h1, .hero h4, .hero p{
+      text-shadow:var(--shadow);
+}
+
+.hero h1{
+      font-family: 'Pacifico', cursive;
+      font-size: 6rem;
+}
+
+.hero h4 {
+      font-size:2rem;
+}
+
+.hero p {
+      font-size: 2.5rem;
+}
+
+.hero a {
+      color: var(--pink);
+      background-color:white;
+      box-shadow: var(--shadow);
+}
+
+.hero a:hover{
+      background-color:var(--pink);
+      color:white;
+}
+
+/* Media Query */
+/* Untuk Laptop */
+@media(max-width:992px){
+      html{
+            font-size:75%;
+      }
+      .simply-countdown > .simply-section{
+            padding: 70px;
+      }
+
+}
+/*Untuk Tablet*/
+@media(max-width:768px){
+      html{
+            font-size:65%;
+      }
+      .simply-countdown > .simply-section{
+            padding: 60px;
+            margin:5px;
+      }
+
+}
+/*Untuk Smartphone*/
+@media(max-width:576px){
+      html{
+            font-size:60%;
+      }
+      .simply-countdown > .simply-section{
+            padding: 45px;
+            margin: 3px;
+      }
+}
+
