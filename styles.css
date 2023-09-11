@@ -1,13 +1,27 @@
 :root{
-      --pink:#f91bdf;
-      --bg: #25bed6;
+      --pink:#e53c3c;
+      --bg: #d996cf;
       --shadow: 0 4px 4px rgba(107 89 89 / 0.5);
 }
 
 body{
       font-size: 1.2rem;
-      font-family:'Lato', sans-serif;
-      min-height: 2000px;
+      font-family:Arial, Helvetica, sans-serif;
+      min-height: 4000px;
+}
+
+.hero::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-image:url(images/background.jpg);
+      background-size:cover;
+      background-position:center;
+      z-index:-1;
+      filter:grayscale();
 }
 
 .hero{
@@ -24,11 +38,13 @@ body{
       font-size: 6rem;
 }
 
+
 .hero h4 {
       font-size:2rem;
 }
 
 .hero p {
+      text-shadow: var(--shadow);
       font-size: 2.5rem;
 }
 
@@ -43,7 +59,140 @@ body{
       color:white;
 }
 
+.my-navbar{
+      background-color:rgba(255, 255, 255, 0.3)!important;
+      backdrop-filter: blur(4px);
+}
+
+.my-navbar .offcanvas{
+      height:100vh;
+}
+
+.home h2{
+      color:var(--pink);
+      font-family:'Pacifico', cursive;
+      font-weight:bold;
+      font-size:5rem;
+}
+
+.home h3{
+      color:#444;
+      font-size:1.5rem;
+      margin-bottom:1rem;
+}
+
+.home p{
+      font-size:1.1rem;
+      color:#656;
+}
+
+.home .couple{
+      margin-top:100px;
+}
+
+.home .couple h3 {
+      font-family: 'Pacifico', cursive;
+      font-size:2.4rem;
+      color:var(--pink);
+}
+
+.home .couple img{
+      width:100%;
+}
+
+.home .heart{
+      width: 50px;
+      height: 50px;
+      background-color:white;
+      display:flex;
+      border-radius:50%;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      position: absolute;
+      left: 50%;
+      transform:translateX(-50%) translateY(65px);
+}
+
+.home .heart i {
+      margin:auto;
+      color:var(--pink);
+}
+
+.info{
+      background-color:pink;
+      color:black;
+      padding-top:10rem;
+      padding-bottom:8rem;
+}
+
+.home h2, .info h2 {
+      color:var(--pink);
+      font-family:'Pacifico', cursive;
+      font-size:5rem;
+      font-weight:bold;
+}
+
+.my-navbar .navbar-brand, .my-navbar .offcanvas-title{
+      font-family:'Pacifico', cursive;
+      font-size:3.2rem;
+      font-weight:bold;
+}
+
+.my-navbar .nav-link{
+      text-transform:uppercase;
+}
+
+.home{
+      /* Floral Patterns menyusul */
+      background-image:url(images/floral-background.png);
+      background-size:cover;
+      min-height: 100vh;
+      margin-top: -6rem;
+      padding-top: 15rem;
+      padding-bottom: 5rem;
+}
+
+.info .address{
+      font-size:1.1rem;
+}
+
+.info .description{
+      font-size:1rem;
+      font-weight:400;
+}
+
+.info .card{
+      background-color:rgba(255, 255, 254, 0.3)!important;
+      color:black !important;
+      border:1px solid #993;
+}
+
+.info .card-header{
+      border-bottom:1px solid #993;
+      text-transform:uppercase;
+      letter-spacing:0.1rem;
+}
+
+.info .card-body{
+      font-size:1rem;
+}
+
+.info .card-footer{
+      border-top:1px solid #993;
+      font-size:0.9rem;
+      font-weight: 400;
+}
+
 /* Media Query */
+/* Extra Large */
+
+@media (max-width:1200px)
+{
+      .home .heart
+      {
+            transform:translateX(-50%) translateY(45px);
+      }
+}
+
 /* Untuk Laptop */
 @media(max-width:992px){
       html{
@@ -51,6 +200,10 @@ body{
       }
       .simply-countdown > .simply-section{
             padding: 70px;
+      }
+      .home .heart
+      {
+            display:none;
       }
 
 }
@@ -62,6 +215,10 @@ body{
       .simply-countdown > .simply-section{
             padding: 60px;
             margin:5px;
+      }
+      .my-navbar .nav-link{
+            font-size:2rem;
+            text-align:center;
       }
 
 }
