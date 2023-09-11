@@ -6,7 +6,7 @@
 
 body{
       font-size: 1.2rem;
-      font-family:Arial, Helvetica, sans-serif;
+      font-family: 'Kalam', cursive;
       min-height: 4000px;
 }
 
@@ -124,7 +124,7 @@ body{
       padding-bottom:8rem;
 }
 
-.home h2, .info h2 {
+.home h2, .info h2, .story h2 {
       color:var(--pink);
       font-family:'Pacifico', cursive;
       font-size:5rem;
@@ -138,7 +138,13 @@ body{
 }
 
 .my-navbar .nav-link{
+      font-size:2rem;
+      text-align:center;
       text-transform:uppercase;
+}
+
+.sticky-top{
+      overflow:hidden;
 }
 
 .home{
@@ -180,6 +186,64 @@ body{
       border-top:1px solid #993;
       font-size:0.9rem;
       font-weight: 400;
+}
+
+.story span{
+      text-transform: uppercase;
+      color:#666;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 1rem;
+}
+
+.story p{
+      font-size: 1rem;
+      font-weight: 500;
+}
+
+.timeline{
+      list-style:none;
+      padding:1.4rem 0;
+      margin-top: 1rem;
+      position:relative;
+}
+
+.timeline::before{
+      content:'';
+      top: 0;
+      bottom: 0;
+      position:absolute;
+      width:1px;
+      background-color:#ccc;
+      left:50%;
+}
+
+.timeline li
+{
+      margin-bottom: 1.5rem;
+      position:relative;
+}
+
+.timeline li::before,
+.timeline li::after{
+      content:'';
+      display:table;
+}
+
+.timeline li::after{
+      clear:both;
+
+}
+
+.timeline li .timeline-image {
+      width:160px;
+      height: 160px;
+      background-color: #ccc;
+      position:absolute;
+      left:50%;
+      transform: translateX(-50%);
+      border-radius:50%;
 }
 
 /* Media Query */
