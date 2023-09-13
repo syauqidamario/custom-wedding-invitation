@@ -415,6 +415,11 @@
 
       <script>
             const rootElement = document.querySelector(":root");
+            const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+            const audioIcon = document.querySelector('.audio-icon-wrapper i');
+            const song = document.querySelector('#bgm');
+            let isPlaying = false;
+
             function disableScrolling()
             {
                   //untuk posisi halaman kita terhadap sumbu x dan y
@@ -431,18 +436,38 @@
             }
 
 
-
             function enableScrolling()
             {
                   window.onscroll = function (){}
                   rootElement.style.scrollBehavior = 'smooth';
                   // localStorage.setItem('opened', 'true');
+                  playAudio();
             }
 
             function playAudio()
             {
-                  const song = document.querySelector('#song');
-                  song.play(); 
+                  bgm.volume = 0.25;
+                  audioIconWrapper.style.display = 'flex';
+                  bgm.play();
+                  isPlaying = true;
+            }
+
+            audioIconWrapper.onclick = function()
+            {
+                  if(isPlaying)
+                  {
+                        song.pause();
+                        audioIcon.classList.remove('bi-disc');
+                        audioIcon.classList.add('bi-pause-circle');
+                  }
+                  
+                  else
+                  {
+                        song.play();
+                        audioIcon.classList.remove('bi-disc');
+                        audioIcon.classList.add('bi-pause-circle');
+                  }
+                  isPlaying = !isPlaying;
             }
 
             // if(!localStorage.getItem('opened'))
