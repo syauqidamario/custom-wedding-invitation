@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Invite da Wedding</title>
+    <title>m-Wedding</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,9 @@
             <main>
                   <!--Untuk flexbox di tengah halaman-->
                   <h4>
+                        <span>
                         To Mr/Mrs,
+                        </span>
                   </h4>
                   <h1>Junji and Reika</h1>
                   <p>
@@ -112,7 +114,8 @@
                         <div class="col-md-8 col-10 text-center">
                               <h2>Event Information</h2>
                               <p class="address">Address: Hotel Indonesia Kempinski <br> Jl. M.H. Thamrin No.1, RT.1/RW.5, Menteng, Kec. Menteng, Kota Jakarta Pusat</p>
-                              <a href="https://goo.gl/maps/SdgtvaMrt2BaQB1r9" target="_blank" class="btn btn-light btn-sm my-3">Click to Open map</a>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5147513030206!2d106.81978227330922!3d-6.195607560693794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f421963cd607%3A0x503cb9e9306e657a!2sHotel%20Indonesia%20Kempinski%20Jakarta!5e0!3m2!1sen!2sid!4v1694595970443!5m2!1sen!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                              <a href="https://goo.gl/maps/SdgtvaMrt2BaQB1r9" target="_blank" class="btn btn-light btn-sm my-3">  Open map</a>
                               <p class="description">Be careful to not get into the wrong directions.</p>
                         </div>
                   </div>
@@ -371,6 +374,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
     <script>
       simplyCountdown('.simply-countdown',{
             year: 2029, // required
@@ -397,6 +401,7 @@
             refresh: 1000, //default refresh every 1s
       });
       </script>
+
       <script>
             const stickyTop = document.querySelector('.sticky-top');
             const offcanvas = document.querySelector('.offcanvas');
@@ -496,5 +501,15 @@
             });
       });
       </script>
+      
+      <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('n') || '';
+            const pronoun = urlParams.get('p') ||  'Mr/Ms.';
+            const nameContainer = document.querySelector('.hero h4 span');
+            nameContainer.innerText = `${pronoun} ${name}`.replace(/ ,$/, ',');
+            document.querySelector('#name').value = name;
+      </script>
+
   </body>
 </html>
